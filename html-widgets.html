@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.1 HTML Widgets | Flexdashboard</title>
+  <meta name="description" content="4.1 HTML Widgets | Flexdashboard" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.1 HTML Widgets | Flexdashboard" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.1 HTML Widgets | Flexdashboard" />
+  
+  
+  
+
+<meta name="author" content="Sunny" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="components.html"/>
+<link rel="next" href="r-graphics.html"/>
+<script src="libs/jquery-3.5.0/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="libs/moment-2.8.4/moment.js"></script>
+<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/bokehjs-0.12.5/bokeh.min.css" rel="stylesheet" />
+<link href="libs/bokehjs-0.12.5/loader.css" rel="stylesheet" />
+<script src="libs/bokehjs-0.12.5/bokeh.min.js"></script>
+<script src="libs/rbokeh-binding-0.5.1/rbokeh.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>1</b> Layout</a><ul>
+<li class="chapter" data-level="1.1" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>1.1</b> Orientation</a></li>
+<li class="chapter" data-level="1.2" data-path="scrolling-layout.html"><a href="scrolling-layout.html"><i class="fa fa-check"></i><b>1.2</b> Scrolling Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="tabsets.html"><a href="tabsets.html"><i class="fa fa-check"></i><b>1.3</b> Tabsets</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sizing.html"><a href="sizing.html"><i class="fa fa-check"></i><b>2</b> Sizing</a><ul>
+<li class="chapter" data-level="2.1" data-path="width-and-height.html"><a href="width-and-height.html"><i class="fa fa-check"></i><b>2.1</b> Width and Height</a></li>
+<li class="chapter" data-level="2.2" data-path="size-attributes.html"><a href="size-attributes.html"><i class="fa fa-check"></i><b>2.2</b> Size Attributes</a></li>
+<li class="chapter" data-level="2.3" data-path="flexbox-layout.html"><a href="flexbox-layout.html"><i class="fa fa-check"></i><b>2.3</b> Flexbox Layout</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="multiple-pages.html"><a href="multiple-pages.html"><i class="fa fa-check"></i><b>3</b> Multiple Pages</a><ul>
+<li class="chapter" data-level="3.1" data-path="page-orientation.html"><a href="page-orientation.html"><i class="fa fa-check"></i><b>3.1</b> Page Orientation</a></li>
+<li class="chapter" data-level="3.2" data-path="page-navigation.html"><a href="page-navigation.html"><i class="fa fa-check"></i><b>3.2</b> Page Navigation</a></li>
+<li class="chapter" data-level="3.3" data-path="page-links.html"><a href="page-links.html"><i class="fa fa-check"></i><b>3.3</b> Page Links</a></li>
+<li class="chapter" data-level="3.4" data-path="page-icons.html"><a href="page-icons.html"><i class="fa fa-check"></i><b>3.4</b> Page Icons</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="components.html"><a href="components.html"><i class="fa fa-check"></i><b>4</b> Components</a><ul>
+<li class="chapter" data-level="4.1" data-path="html-widgets.html"><a href="html-widgets.html"><i class="fa fa-check"></i><b>4.1</b> HTML Widgets</a></li>
+<li class="chapter" data-level="4.2" data-path="r-graphics.html"><a href="r-graphics.html"><i class="fa fa-check"></i><b>4.2</b> R Graphics</a></li>
+<li class="chapter" data-level="4.3" data-path="tabular-data.html"><a href="tabular-data.html"><i class="fa fa-check"></i><b>4.3</b> Tabular Data</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tabular-data.html"><a href="tabular-data.html#simple-table"><i class="fa fa-check"></i><b>4.3.1</b> Simple Table</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tabular-data.html"><a href="tabular-data.html#data-table"><i class="fa fa-check"></i><b>4.3.2</b> Data Table</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="value-boxes.html"><a href="value-boxes.html"><i class="fa fa-check"></i><b>4.4</b> Value Boxes</a></li>
+<li class="chapter" data-level="4.5" data-path="gauges.html"><a href="gauges.html"><i class="fa fa-check"></i><b>4.5</b> Gauges</a></li>
+<li class="chapter" data-level="4.6" data-path="nevigation-bar.html"><a href="nevigation-bar.html"><i class="fa fa-check"></i><b>4.6</b> Nevigation Bar</a></li>
+<li class="chapter" data-level="4.7" data-path="text-annotations.html"><a href="text-annotations.html"><i class="fa fa-check"></i><b>4.7</b> Text Annotations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="appearance.html"><a href="appearance.html"><i class="fa fa-check"></i><b>5</b> Appearance</a><ul>
+<li class="chapter" data-level="5.1" data-path="themes.html"><a href="themes.html"><i class="fa fa-check"></i><b>5.1</b> Themes</a></li>
+<li class="chapter" data-level="5.2" data-path="css-styles.html"><a href="css-styles.html"><i class="fa fa-check"></i><b>5.2</b> CSS Styles</a></li>
+<li class="chapter" data-level="5.3" data-path="logo-favicon.html"><a href="logo-favicon.html"><i class="fa fa-check"></i><b>5.3</b> Logo &amp; Favicon</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="storyboards.html"><a href="storyboards.html"><i class="fa fa-check"></i><b>6</b> Storyboards</a><ul>
+<li class="chapter" data-level="6.1" data-path="storyboard-basics.html"><a href="storyboard-basics.html"><i class="fa fa-check"></i><b>6.1</b> Storyboard Basics</a></li>
+<li class="chapter" data-level="6.2" data-path="storyboard-pages.html"><a href="storyboard-pages.html"><i class="fa fa-check"></i><b>6.2</b> Storyboard Pages</a></li>
+<li class="chapter" data-level="6.3" data-path="commentary.html"><a href="commentary.html"><i class="fa fa-check"></i><b>6.3</b> Commentary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mobile-layout.html"><a href="mobile-layout.html"><i class="fa fa-check"></i><b>7</b> Mobile Layout</a><ul>
+<li class="chapter" data-level="7.1" data-path="medium-screens.html"><a href="medium-screens.html"><i class="fa fa-check"></i><b>7.1</b> Medium Screens</a></li>
+<li class="chapter" data-level="7.2" data-path="small-screens.html"><a href="small-screens.html"><i class="fa fa-check"></i><b>7.2</b> Small Screens</a></li>
+<li class="chapter" data-level="7.3" data-path="mobile-css.html"><a href="mobile-css.html"><i class="fa fa-check"></i><b>7.3</b> Mobile CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="learning-more.html"><a href="learning-more.html"><i class="fa fa-check"></i><b>8</b> Learning More</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Flexdashboard</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="html-widgets" class="section level2">
+<h2><span class="header-section-number">4.1</span> HTML Widgets</h2>
+<p>The <a href="http://www.htmlwidgets.org">htmlwidgets</a> framework provides high-level R bindings for JavaScript data visualization libraries. Charts based on htmlwidgets are ideal for use with flexdashboard because they can dynamically re-size themselves, so will nearly always fit perfectly within the bounds of their flexdashboard containers.</p>
+<hr />
+<ol style="list-style-type: decimal">
+<li><a href="http://rstudio.github.io/leaflet/">Leaflet</a>, a library for creating dynamic maps that support panning and zooming, with various annotations like markers, polygons, and popups.</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Here is a basic example of leaflet:</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(leaflet)</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">m &lt;-<span class="st"> </span><span class="kw">leaflet</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="st">  </span><span class="kw">addMarkers</span>(<span class="dt">lng=</span><span class="fl">120.217729</span>, <span class="dt">lat=</span><span class="fl">22.998343</span>, <span class="dt">popup=</span><span class="st">&quot;Department of Statistics, NCKU&quot;</span>)</a>
+<a class="sourceLine" id="cb14-6" data-line-number="6">m</a></code></pre></div>
+<div id="htmlwidget-020a3dafd05233f7b219" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-020a3dafd05233f7b219">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[22.998343,120.217729,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Department of Statistics, NCKU",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[22.998343,22.998343],"lng":[120.217729,120.217729]}},"evals":[],"jsHooks":[]}</script>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li><a href="http://rstudio.github.io/dygraphs/">dygraphs</a>, which provides rich facilities for charting time-series data and includes support for many interactive features including series/point highlighting, zooming, and panning.</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># Here is a basic example of dygraphs:</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">library</span>(dygraphs)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="kw">dygraph</span>(nhtemp, <span class="dt">main =</span> <span class="st">&quot;New Haven Temperatures&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw">dyRangeSelector</span>(<span class="dt">dateWindow =</span> <span class="kw">c</span>(<span class="st">&quot;1920-01-01&quot;</span>, <span class="st">&quot;1960-01-01&quot;</span>))</a></code></pre></div>
+<div id="htmlwidget-493baa54e63a1b5e4682" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-493baa54e63a1b5e4682">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<hr />
+<ol start="3" style="list-style-type: decimal">
+<li><a href="https://plotly.com/r/">Plotly</a>, which via it’s ggplotly interface allows you to easily translate your ggplot2 graphics to an interactive web-based version.</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># Here is a basic example of plotly:</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">library</span>(plotly)</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>mtcars, <span class="kw">aes</span>(<span class="dt">y=</span>mpg, <span class="dt">x=</span>wt)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="st">       </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span><span class="kw">factor</span>(gear))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="st">       </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Miles/(US)gallon&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Weight(1000 lbs)&quot;</span>, </a>
+<a class="sourceLine" id="cb16-7" data-line-number="7">            <span class="dt">color=</span><span class="st">&quot;Number of forward gears&quot;</span>)</a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="kw">ggplotly</span>(p)</a></code></pre></div>
+<div id="htmlwidget-5230cbcc0522039c3edb" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5230cbcc0522039c3edb">{"x":{"data":[{"x":[3.215,3.44,3.46,3.57,4.07,3.73,3.78,5.25,5.424,5.345,2.465,3.52,3.435,3.84,3.845],"y":[21.4,18.7,18.1,14.3,16.4,17.3,15.2,10.4,10.4,14.7,21.5,15.5,15.2,13.3,19.2],"text":["factor(gear): 3<br />wt: 3.215<br />mpg: 21.4","factor(gear): 3<br />wt: 3.440<br />mpg: 18.7","factor(gear): 3<br />wt: 3.460<br />mpg: 18.1","factor(gear): 3<br />wt: 3.570<br />mpg: 14.3","factor(gear): 3<br />wt: 4.070<br />mpg: 16.4","factor(gear): 3<br />wt: 3.730<br />mpg: 17.3","factor(gear): 3<br />wt: 3.780<br />mpg: 15.2","factor(gear): 3<br />wt: 5.250<br />mpg: 10.4","factor(gear): 3<br />wt: 5.424<br />mpg: 10.4","factor(gear): 3<br />wt: 5.345<br />mpg: 14.7","factor(gear): 3<br />wt: 2.465<br />mpg: 21.5","factor(gear): 3<br />wt: 3.520<br />mpg: 15.5","factor(gear): 3<br />wt: 3.435<br />mpg: 15.2","factor(gear): 3<br />wt: 3.840<br />mpg: 13.3","factor(gear): 3<br />wt: 3.845<br />mpg: 19.2"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"3","legendgroup":"3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.62,2.875,2.32,3.19,3.15,3.44,3.44,2.2,1.615,1.835,1.935,2.78],"y":[21,21,22.8,24.4,22.8,19.2,17.8,32.4,30.4,33.9,27.3,21.4],"text":["factor(gear): 4<br />wt: 2.620<br />mpg: 21.0","factor(gear): 4<br />wt: 2.875<br />mpg: 21.0","factor(gear): 4<br />wt: 2.320<br />mpg: 22.8","factor(gear): 4<br />wt: 3.190<br />mpg: 24.4","factor(gear): 4<br />wt: 3.150<br />mpg: 22.8","factor(gear): 4<br />wt: 3.440<br />mpg: 19.2","factor(gear): 4<br />wt: 3.440<br />mpg: 17.8","factor(gear): 4<br />wt: 2.200<br />mpg: 32.4","factor(gear): 4<br />wt: 1.615<br />mpg: 30.4","factor(gear): 4<br />wt: 1.835<br />mpg: 33.9","factor(gear): 4<br />wt: 1.935<br />mpg: 27.3","factor(gear): 4<br />wt: 2.780<br />mpg: 21.4"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,186,56,1)"}},"hoveron":"points","name":"4","legendgroup":"4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.14,1.513,3.17,2.77,3.57],"y":[26,30.4,15.8,19.7,15],"text":["factor(gear): 5<br />wt: 2.140<br />mpg: 26.0","factor(gear): 5<br />wt: 1.513<br />mpg: 30.4","factor(gear): 5<br />wt: 3.170<br />mpg: 15.8","factor(gear): 5<br />wt: 2.770<br />mpg: 19.7","factor(gear): 5<br />wt: 3.570<br />mpg: 15.0"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(97,156,255,1)"}},"hoveron":"points","name":"5","legendgroup":"5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1.31745,5.61955],"tickmode":"array","ticktext":["2","3","4","5"],"tickvals":[2,3,4,5],"categoryorder":"array","categoryarray":["2","3","4","5"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Weight(1000 lbs)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[9.225,35.075],"tickmode":"array","ticktext":["10","15","20","25","30","35"],"tickvals":[10,15,20,25,30,35],"categoryorder":"array","categoryarray":["10","15","20","25","30","35"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Miles/(US)gallon","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.913385826771654},"annotations":[{"text":"Number of forward gears","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"34896e56b813":{"colour":{},"x":{},"y":{},"type":"scatter"}},"cur_data":"34896e56b813","visdat":{"34896e56b813":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr />
+<ol start="4" style="list-style-type: decimal">
+<li><a href="http://hafen.github.io/rbokeh/">rbokeh</a>, a visualization library that provides a flexible and powerful declarative framework for creating web-based plots.</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Here is a basic example of rbokeh:</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">library</span>(rbokeh)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="kw">figure</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw">ly_points</span>(Sepal.Length, Sepal.Width, <span class="dt">data =</span> iris,</a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">    <span class="dt">color =</span> Species, <span class="dt">glyph =</span> Species,</a>
+<a class="sourceLine" id="cb17-6" data-line-number="6">    <span class="dt">hover =</span> <span class="kw">list</span>(Sepal.Length, Sepal.Width))</a></code></pre></div>
+<div id="htmlwidget-4619ebc8d487bba8f707" style="width:672px;height:480px;" class="rbokeh html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4619ebc8d487bba8f707">{"x":{"elementid":"05e87c18aff1948ebd76dd5041e44b1a","modeltype":"Plot","modelid":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","docid":"2854e9c50e0e976047b9eca1d866445d","docs_json":{"2854e9c50e0e976047b9eca1d866445d":{"version":"0.12.5","title":"Bokeh Figure","roots":{"root_ids":["37b9a6ce9b878e5ad65d89ac8c4cb8bc"],"references":[{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","attributes":{"id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","sizing_mode":"scale_both","x_range":{"type":"Range1d","id":"a909e0c05421032f5c0eeb68dec9cd92"},"y_range":{"type":"Range1d","id":"eaf8fa77e59f3cc0568edd56b6ee99cd"},"left":[{"type":"LinearAxis","id":"78d92ce0f265cba234ed5870f00f5f64"}],"below":[{"type":"LinearAxis","id":"f412b11ecd7197bf1ead45f6bca4453a"}],"right":[],"above":[],"renderers":[{"type":"BoxAnnotation","id":"fc311fea32a1de2ff2333d64375e64c2"},{"type":"GlyphRenderer","id":"03c30c4690f5b127ad5042c8cb510f20"},{"type":"GlyphRenderer","id":"6305159fed8091f7f3e8d16d61e37631"},{"type":"GlyphRenderer","id":"4b7e74d787e8902b88faf763fc74ec69"},{"type":"GlyphRenderer","id":"b76679e86406c84cfe4167eb6a28cf10"},{"type":"GlyphRenderer","id":"4357fd707e6036ac64289ca4b98de894"},{"type":"GlyphRenderer","id":"0a62a0e51b4dcd4918b3aaedf34b4b7e"},{"type":"Legend","id":"b759beaf7bc66477efb3fc7354ec13a5"},{"type":"LinearAxis","id":"f412b11ecd7197bf1ead45f6bca4453a"},{"type":"Grid","id":"148848b85e5b751d83557cb4b5040693"},{"type":"LinearAxis","id":"78d92ce0f265cba234ed5870f00f5f64"},{"type":"Grid","id":"3cd75976017a0fbc4695f3b9f0cb7737"}],"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"min_border_left":4,"min_border_right":4,"min_border_top":4,"min_border_bottom":4,"lod_threshold":null,"toolbar":{"type":"Toolbar","id":"e62f4696c20751c7b346777dd25afa28"},"tool_events":{"type":"ToolEvents","id":"d39ad578d64a05f6ecf6ea27c538330c"}},"subtype":"Figure"},{"type":"Toolbar","id":"e62f4696c20751c7b346777dd25afa28","attributes":{"id":"e62f4696c20751c7b346777dd25afa28","tags":[],"active_drag":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"type":"PanTool","id":"8b65236e7dce0f8ada5e4d472e5d0e69"},{"type":"WheelZoomTool","id":"c80d3581dcd2d9d161bf26f921331a38"},{"type":"BoxZoomTool","id":"429b22050a29984e41373bc2a91cfb9c"},{"type":"ResetTool","id":"4caaab036be5a0e4ef62e4fb95e6d321"},{"type":"SaveTool","id":"0b2c35810b0baedc3ddb9fe400aa188c"},{"type":"HelpTool","id":"37364d22cccfb02dfab698e8a362fae0"},{"type":"HoverTool","id":"875e7bf0b5447bc89c21c0199903cd23"},{"type":"HoverTool","id":"5e4da88be9515c9dc0a97c99e122d452"},{"type":"HoverTool","id":"04610754f0bf0ad3044527c61650bbd8"}],"logo":null}},{"type":"PanTool","id":"8b65236e7dce0f8ada5e4d472e5d0e69","attributes":{"id":"8b65236e7dce0f8ada5e4d472e5d0e69","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"dimensions":"both"}},{"type":"ToolEvents","id":"d39ad578d64a05f6ecf6ea27c538330c","attributes":{"id":"d39ad578d64a05f6ecf6ea27c538330c","tags":[]},"geometries":[]},{"type":"WheelZoomTool","id":"c80d3581dcd2d9d161bf26f921331a38","attributes":{"id":"c80d3581dcd2d9d161bf26f921331a38","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"dimensions":"both"}},{"type":"BoxAnnotation","id":"fc311fea32a1de2ff2333d64375e64c2","attributes":{"id":"fc311fea32a1de2ff2333d64375e64c2","tags":[],"line_color":{"units":"data","value":"black"},"line_alpha":{"units":"data","value":1},"fill_color":{"units":"data","value":"lightgrey"},"fill_alpha":{"units":"data","value":0.5},"line_dash":[4,4],"line_width":{"units":"data","value":2},"level":"overlay","top_units":"screen","bottom_units":"screen","left_units":"screen","right_units":"screen","render_mode":"css"}},{"type":"BoxZoomTool","id":"429b22050a29984e41373bc2a91cfb9c","attributes":{"id":"429b22050a29984e41373bc2a91cfb9c","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"overlay":{"type":"BoxAnnotation","id":"fc311fea32a1de2ff2333d64375e64c2"}}},{"type":"ResetTool","id":"4caaab036be5a0e4ef62e4fb95e6d321","attributes":{"id":"4caaab036be5a0e4ef62e4fb95e6d321","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"}}},{"type":"SaveTool","id":"0b2c35810b0baedc3ddb9fe400aa188c","attributes":{"id":"0b2c35810b0baedc3ddb9fe400aa188c","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"}}},{"type":"HelpTool","id":"37364d22cccfb02dfab698e8a362fae0","attributes":{"id":"37364d22cccfb02dfab698e8a362fae0","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"redirect":"https://hafen.github.io/rbokeh","help_tooltip":"Click to learn more about rbokeh."}},{"type":"HoverTool","id":"875e7bf0b5447bc89c21c0199903cd23","attributes":{"id":"875e7bf0b5447bc89c21c0199903cd23","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"03c30c4690f5b127ad5042c8cb510f20"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Sepal.Length","@hover_col_1"],["Sepal.Width","@hover_col_2"]]}},{"type":"ColumnDataSource","id":"fc9e7dc6fe0704cedee4fad88c0fd316","attributes":{"id":"fc9e7dc6fe0704cedee4fad88c0fd316","tags":[],"column_names":["x","y","line_color","fill_color","hover_col_1","hover_col_2"],"selected":[],"data":{"x":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"y":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"line_color":["#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4"],"fill_color":["#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4","#1F77B4"],"hover_col_1":["5.1","4.9","4.7","4.6","5.0","5.4","4.6","5.0","4.4","4.9","5.4","4.8","4.8","4.3","5.8","5.7","5.4","5.1","5.7","5.1","5.4","5.1","4.6","5.1","4.8","5.0","5.0","5.2","5.2","4.7","4.8","5.4","5.2","5.5","4.9","5.0","5.5","4.9","4.4","5.1","5.0","4.5","4.4","5.0","5.1","4.8","5.1","4.6","5.3","5.0"],"hover_col_2":["3.5","3.0","3.2","3.1","3.6","3.9","3.4","3.4","2.9","3.1","3.7","3.4","3.0","3.0","4.0","4.4","3.9","3.5","3.8","3.8","3.4","3.7","3.6","3.3","3.4","3.0","3.4","3.5","3.4","3.2","3.1","3.4","4.1","4.2","3.1","3.2","3.5","3.6","3.0","3.4","3.5","2.3","3.2","3.5","3.8","3.0","3.8","3.2","3.7","3.3"]}}},{"type":"Circle","id":"e19a17e3392be49f0255f738bc78d6b0","attributes":{"id":"e19a17e3392be49f0255f738bc78d6b0","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"Circle","id":"7c31a971719d6ba3536564504a0e183a","attributes":{"id":"7c31a971719d6ba3536564504a0e183a","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"}}},{"type":"Circle","id":"5ac7d6951a5860625c4b670c4945dd64","attributes":{"id":"5ac7d6951a5860625c4b670c4945dd64","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"GlyphRenderer","id":"03c30c4690f5b127ad5042c8cb510f20","attributes":{"id":"03c30c4690f5b127ad5042c8cb510f20","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"7c31a971719d6ba3536564504a0e183a"},"hover_glyph":{"type":"Circle","id":"5ac7d6951a5860625c4b670c4945dd64"},"name":null,"data_source":{"type":"ColumnDataSource","id":"fc9e7dc6fe0704cedee4fad88c0fd316"},"glyph":{"type":"Circle","id":"e19a17e3392be49f0255f738bc78d6b0"}}},{"type":"HoverTool","id":"5e4da88be9515c9dc0a97c99e122d452","attributes":{"id":"5e4da88be9515c9dc0a97c99e122d452","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"6305159fed8091f7f3e8d16d61e37631"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Sepal.Length","@hover_col_1"],["Sepal.Width","@hover_col_2"]]}},{"type":"ColumnDataSource","id":"fe94d8a0ea49419fc08c69666f3857fd","attributes":{"id":"fe94d8a0ea49419fc08c69666f3857fd","tags":[],"column_names":["x","y","line_color","fill_color","hover_col_1","hover_col_2"],"selected":[],"data":{"x":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"y":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"line_color":["#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E"],"fill_color":["#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E","#FF7F0E"],"hover_col_1":["7.0","6.4","6.9","5.5","6.5","5.7","6.3","4.9","6.6","5.2","5.0","5.9","6.0","6.1","5.6","6.7","5.6","5.8","6.2","5.6","5.9","6.1","6.3","6.1","6.4","6.6","6.8","6.7","6.0","5.7","5.5","5.5","5.8","6.0","5.4","6.0","6.7","6.3","5.6","5.5","5.5","6.1","5.8","5.0","5.6","5.7","5.7","6.2","5.1","5.7"],"hover_col_2":["3.2","3.2","3.1","2.3","2.8","2.8","3.3","2.4","2.9","2.7","2.0","3.0","2.2","2.9","2.9","3.1","3.0","2.7","2.2","2.5","3.2","2.8","2.5","2.8","2.9","3.0","2.8","3.0","2.9","2.6","2.4","2.4","2.7","2.7","3.0","3.4","3.1","2.3","3.0","2.5","2.6","3.0","2.6","2.3","2.7","3.0","2.9","2.9","2.5","2.8"]}}},{"type":"Square","id":"c81e2e7d7cd4345c72d5ca5b772a828e","attributes":{"id":"c81e2e7d7cd4345c72d5ca5b772a828e","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"Square","id":"71a7e6b987b9b59f891e901537f1b06d","attributes":{"id":"71a7e6b987b9b59f891e901537f1b06d","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"}}},{"type":"Square","id":"0ed62663b90239dfc7b540e4ed734f1b","attributes":{"id":"0ed62663b90239dfc7b540e4ed734f1b","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"GlyphRenderer","id":"6305159fed8091f7f3e8d16d61e37631","attributes":{"id":"6305159fed8091f7f3e8d16d61e37631","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Square","id":"71a7e6b987b9b59f891e901537f1b06d"},"hover_glyph":{"type":"Square","id":"0ed62663b90239dfc7b540e4ed734f1b"},"name":null,"data_source":{"type":"ColumnDataSource","id":"fe94d8a0ea49419fc08c69666f3857fd"},"glyph":{"type":"Square","id":"c81e2e7d7cd4345c72d5ca5b772a828e"}}},{"type":"HoverTool","id":"04610754f0bf0ad3044527c61650bbd8","attributes":{"id":"04610754f0bf0ad3044527c61650bbd8","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"4b7e74d787e8902b88faf763fc74ec69"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Sepal.Length","@hover_col_1"],["Sepal.Width","@hover_col_2"]]}},{"type":"ColumnDataSource","id":"48c8f00bdc0b4a470d13b656978f1fba","attributes":{"id":"48c8f00bdc0b4a470d13b656978f1fba","tags":[],"column_names":["x","y","line_color","fill_color","hover_col_1","hover_col_2"],"selected":[],"data":{"x":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"y":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"line_color":["#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C"],"fill_color":["#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C","#2CA02C"],"hover_col_1":["6.3","5.8","7.1","6.3","6.5","7.6","4.9","7.3","6.7","7.2","6.5","6.4","6.8","5.7","5.8","6.4","6.5","7.7","7.7","6.0","6.9","5.6","7.7","6.3","6.7","7.2","6.2","6.1","6.4","7.2","7.4","7.9","6.4","6.3","6.1","7.7","6.3","6.4","6.0","6.9","6.7","6.9","5.8","6.8","6.7","6.7","6.3","6.5","6.2","5.9"],"hover_col_2":["3.3","2.7","3.0","2.9","3.0","3.0","2.5","2.9","2.5","3.6","3.2","2.7","3.0","2.5","2.8","3.2","3.0","3.8","2.6","2.2","3.2","2.8","2.8","2.7","3.3","3.2","2.8","3.0","2.8","3.0","2.8","3.8","2.8","2.8","2.6","3.0","3.4","3.1","3.0","3.1","3.1","3.1","2.7","3.2","3.3","3.0","2.5","3.0","3.4","3.0"]}}},{"type":"Triangle","id":"aacaf96382c9aa9f8d619b889f010a59","attributes":{"id":"aacaf96382c9aa9f8d619b889f010a59","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"Triangle","id":"d798e6bc025a19c9b737ad46d4d40a92","attributes":{"id":"d798e6bc025a19c9b737ad46d4d40a92","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"}}},{"type":"Triangle","id":"145419a8d6a9241ff107e7007a315d57","attributes":{"id":"145419a8d6a9241ff107e7007a315d57","tags":[],"size":{"units":"screen","value":10},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"GlyphRenderer","id":"4b7e74d787e8902b88faf763fc74ec69","attributes":{"id":"4b7e74d787e8902b88faf763fc74ec69","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Triangle","id":"d798e6bc025a19c9b737ad46d4d40a92"},"hover_glyph":{"type":"Triangle","id":"145419a8d6a9241ff107e7007a315d57"},"name":null,"data_source":{"type":"ColumnDataSource","id":"48c8f00bdc0b4a470d13b656978f1fba"},"glyph":{"type":"Triangle","id":"aacaf96382c9aa9f8d619b889f010a59"}}},{"type":"ColumnDataSource","id":"ab7db7c02a835a966612bfa3c71368e2","attributes":{"id":"ab7db7c02a835a966612bfa3c71368e2","tags":[],"column_names":["x","y"],"selected":[],"data":{"x":[null,null],"y":[null,null]}}},{"type":"Circle","id":"4b0334ab59a7d8360d61ed8f8a204bed","attributes":{"id":"4b0334ab59a7d8360d61ed8f8a204bed","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"3bec1cb87f0e650e9d5ed7aa973d97f2","attributes":{"id":"3bec1cb87f0e650e9d5ed7aa973d97f2","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"540b1c08313a7d7ef05d311e1176bfd6","attributes":{"id":"540b1c08313a7d7ef05d311e1176bfd6","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"b76679e86406c84cfe4167eb6a28cf10","attributes":{"id":"b76679e86406c84cfe4167eb6a28cf10","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"3bec1cb87f0e650e9d5ed7aa973d97f2"},"hover_glyph":{"type":"Circle","id":"540b1c08313a7d7ef05d311e1176bfd6"},"name":null,"data_source":{"type":"ColumnDataSource","id":"ab7db7c02a835a966612bfa3c71368e2"},"glyph":{"type":"Circle","id":"4b0334ab59a7d8360d61ed8f8a204bed"}}},{"type":"Square","id":"8c765122c447af387c78e1657800496d","attributes":{"id":"8c765122c447af387c78e1657800496d","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#FF7F0E"},"fill_color":{"units":"data","value":"#FF7F0E"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Square","id":"7b9a270fc2bbdd831c81c5bb0aa0b461","attributes":{"id":"7b9a270fc2bbdd831c81c5bb0aa0b461","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Square","id":"343cd91fa319e8e51047261bab32a004","attributes":{"id":"343cd91fa319e8e51047261bab32a004","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"line_color":{"units":"data","value":"#FF7F0E"},"fill_color":{"units":"data","value":"#FF7F0E"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"4357fd707e6036ac64289ca4b98de894","attributes":{"id":"4357fd707e6036ac64289ca4b98de894","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Square","id":"7b9a270fc2bbdd831c81c5bb0aa0b461"},"hover_glyph":{"type":"Square","id":"343cd91fa319e8e51047261bab32a004"},"name":null,"data_source":{"type":"ColumnDataSource","id":"ab7db7c02a835a966612bfa3c71368e2"},"glyph":{"type":"Square","id":"8c765122c447af387c78e1657800496d"}}},{"type":"Triangle","id":"26ced49096c7087e3f786de05fb7e503","attributes":{"id":"26ced49096c7087e3f786de05fb7e503","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#2CA02C"},"fill_color":{"units":"data","value":"#2CA02C"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Triangle","id":"ecf1c7a63bdfe8717116b0d1e46f3772","attributes":{"id":"ecf1c7a63bdfe8717116b0d1e46f3772","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Triangle","id":"65c4f5bf649cffbdce49ad6b1b333587","attributes":{"id":"65c4f5bf649cffbdce49ad6b1b333587","tags":[],"size":{"units":"screen","value":0},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"line_color":{"units":"data","value":"#2CA02C"},"fill_color":{"units":"data","value":"#2CA02C"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"0a62a0e51b4dcd4918b3aaedf34b4b7e","attributes":{"id":"0a62a0e51b4dcd4918b3aaedf34b4b7e","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Triangle","id":"ecf1c7a63bdfe8717116b0d1e46f3772"},"hover_glyph":{"type":"Triangle","id":"65c4f5bf649cffbdce49ad6b1b333587"},"name":null,"data_source":{"type":"ColumnDataSource","id":"ab7db7c02a835a966612bfa3c71368e2"},"glyph":{"type":"Triangle","id":"26ced49096c7087e3f786de05fb7e503"}}},{"type":"LegendItem","id":"02172d0d80434276dc3722ffbfdb308c","attributes":{"id":"02172d0d80434276dc3722ffbfdb308c","tags":[],"label":{"value":"Species"},"renderers":[]}},{"type":"LegendItem","id":"78321292f4e230387534d59959708799","attributes":{"id":"78321292f4e230387534d59959708799","tags":[],"label":{"value":" setosa"},"renderers":[{"type":"GlyphRenderer","id":"b76679e86406c84cfe4167eb6a28cf10"}]}},{"type":"LegendItem","id":"bcdd9a40d85907d991563a3e0953fb80","attributes":{"id":"bcdd9a40d85907d991563a3e0953fb80","tags":[],"label":{"value":" versicolor"},"renderers":[{"type":"GlyphRenderer","id":"4357fd707e6036ac64289ca4b98de894"}]}},{"type":"LegendItem","id":"dc0d02bcc801f0b334a3da5ec2f8472a","attributes":{"id":"dc0d02bcc801f0b334a3da5ec2f8472a","tags":[],"label":{"value":" virginica"},"renderers":[{"type":"GlyphRenderer","id":"0a62a0e51b4dcd4918b3aaedf34b4b7e"}]}},{"type":"Legend","id":"b759beaf7bc66477efb3fc7354ec13a5","attributes":{"id":"b759beaf7bc66477efb3fc7354ec13a5","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"items":[{"type":"LegendItem","id":"02172d0d80434276dc3722ffbfdb308c"},{"type":"LegendItem","id":"78321292f4e230387534d59959708799"},{"type":"LegendItem","id":"bcdd9a40d85907d991563a3e0953fb80"},{"type":"LegendItem","id":"dc0d02bcc801f0b334a3da5ec2f8472a"}],"location":"top_right"}},{"type":"Range1d","id":"a909e0c05421032f5c0eeb68dec9cd92","attributes":{"id":"a909e0c05421032f5c0eeb68dec9cd92","tags":[],"start":4.048,"end":8.152}},{"type":"Range1d","id":"eaf8fa77e59f3cc0568edd56b6ee99cd","attributes":{"id":"eaf8fa77e59f3cc0568edd56b6ee99cd","tags":[],"start":1.832,"end":4.568}},{"type":"LinearAxis","id":"f412b11ecd7197bf1ead45f6bca4453a","attributes":{"id":"f412b11ecd7197bf1ead45f6bca4453a","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"axis_label":"Sepal.Length","formatter":{"type":"BasicTickFormatter","id":"1fd34e3023c511aab52e32414d209261"},"ticker":{"type":"BasicTicker","id":"970a8f309ef9096516017865ff9b6afe"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"1fd34e3023c511aab52e32414d209261","attributes":{"id":"1fd34e3023c511aab52e32414d209261","tags":[]}},{"type":"BasicTicker","id":"970a8f309ef9096516017865ff9b6afe","attributes":{"id":"970a8f309ef9096516017865ff9b6afe","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"148848b85e5b751d83557cb4b5040693","attributes":{"id":"148848b85e5b751d83557cb4b5040693","tags":[],"dimension":0,"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"970a8f309ef9096516017865ff9b6afe"}}},{"type":"LinearAxis","id":"78d92ce0f265cba234ed5870f00f5f64","attributes":{"id":"78d92ce0f265cba234ed5870f00f5f64","tags":[],"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"axis_label":"Sepal.Width","formatter":{"type":"BasicTickFormatter","id":"9d00273e3d55bef677ff0ade8f5860bd"},"ticker":{"type":"BasicTicker","id":"18e9631ae22031a7002e288a3926e8a9"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"9d00273e3d55bef677ff0ade8f5860bd","attributes":{"id":"9d00273e3d55bef677ff0ade8f5860bd","tags":[]}},{"type":"BasicTicker","id":"18e9631ae22031a7002e288a3926e8a9","attributes":{"id":"18e9631ae22031a7002e288a3926e8a9","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"3cd75976017a0fbc4695f3b9f0cb7737","attributes":{"id":"3cd75976017a0fbc4695f3b9f0cb7737","tags":[],"dimension":1,"plot":{"type":"Plot","id":"37b9a6ce9b878e5ad65d89ac8c4cb8bc","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"18e9631ae22031a7002e288a3926e8a9"}}}]}}},"debug":false},"evals":[],"jsHooks":[]}</script>
+<hr />
+<ol start="5" style="list-style-type: decimal">
+<li><a href="https://jkunst.com/highcharter/">Highcharter</a>, a rich R interface to the popular Highcharts JavaScript graphics library.</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co"># Here is a basic example of highcharter:</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">library</span>(highcharter)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="kw">hchart</span>(mtcars, <span class="st">&quot;scatter&quot;</span>, <span class="kw">hcaes</span>(wt, mpg, <span class="dt">z =</span> drat, <span class="dt">color =</span> hp)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span><span class="kw">hc_title</span>(<span class="dt">text =</span> <span class="st">&quot;Scatter chart with size and color&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-c13402dbe02d722d10fb" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c13402dbe02d722d10fb">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Scatter chart with size and color"},"yAxis":{"title":{"text":"mpg"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,"wt":2.62,"qsec":16.46,"vs":0,"am":1,"gear":4,"carb":4,"x":2.62,"y":21,"z":3.9,"color":"#267B84","colorv":110},{"mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,"wt":2.875,"qsec":17.02,"vs":0,"am":1,"gear":4,"carb":4,"x":2.875,"y":21,"z":3.9,"color":"#267B84","colorv":110},{"mpg":22.8,"cyl":4,"disp":108,"hp":93,"drat":3.85,"wt":2.32,"qsec":18.61,"vs":1,"am":1,"gear":4,"carb":1,"x":2.32,"y":22.8,"z":3.85,"color":"#363769","colorv":93},{"mpg":21.4,"cyl":6,"disp":258,"hp":110,"drat":3.08,"wt":3.215,"qsec":19.44,"vs":1,"am":0,"gear":3,"carb":1,"x":3.215,"y":21.4,"z":3.08,"color":"#267B84","colorv":110},{"mpg":18.7,"cyl":8,"disp":360,"hp":175,"drat":3.15,"wt":3.44,"qsec":17.02,"vs":0,"am":0,"gear":3,"carb":2,"x":3.44,"y":18.7,"z":3.15,"color":"#7FB55F","colorv":175},{"mpg":18.1,"cyl":6,"disp":225,"hp":105,"drat":2.76,"wt":3.46,"qsec":20.22,"vs":1,"am":0,"gear":3,"carb":1,"x":3.46,"y":18.1,"z":2.76,"color":"#305274","colorv":105},{"mpg":14.3,"cyl":8,"disp":360,"hp":245,"drat":3.21,"wt":3.57,"qsec":15.84,"vs":0,"am":0,"gear":3,"carb":4,"x":3.57,"y":14.3,"z":3.21,"color":"#E8DE2E","colorv":245},{"mpg":24.4,"cyl":4,"disp":146.7,"hp":62,"drat":3.69,"wt":3.19,"qsec":20,"vs":1,"am":0,"gear":4,"carb":2,"x":3.19,"y":24.4,"z":3.69,"color":"#400E59","colorv":62},{"mpg":22.8,"cyl":4,"disp":140.8,"hp":95,"drat":3.92,"wt":3.15,"qsec":22.9,"vs":1,"am":0,"gear":4,"carb":2,"x":3.15,"y":22.8,"z":3.92,"color":"#33456E","colorv":95},{"mpg":19.2,"cyl":6,"disp":167.6,"hp":123,"drat":3.92,"wt":3.44,"qsec":18.3,"vs":1,"am":0,"gear":4,"carb":4,"x":3.44,"y":19.2,"z":3.92,"color":"#2B9487","colorv":123},{"mpg":17.8,"cyl":6,"disp":167.6,"hp":123,"drat":3.92,"wt":3.44,"qsec":18.9,"vs":1,"am":0,"gear":4,"carb":4,"x":3.44,"y":17.8,"z":3.92,"color":"#2B9487","colorv":123},{"mpg":16.4,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":4.07,"qsec":17.4,"vs":0,"am":0,"gear":3,"carb":3,"x":4.07,"y":16.4,"z":3.07,"color":"#A9C54C","colorv":180},{"mpg":17.3,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":3.73,"qsec":17.6,"vs":0,"am":0,"gear":3,"carb":3,"x":3.73,"y":17.3,"z":3.07,"color":"#A9C54C","colorv":180},{"mpg":15.2,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":3.78,"qsec":18,"vs":0,"am":0,"gear":3,"carb":3,"x":3.78,"y":15.2,"z":3.07,"color":"#A9C54C","colorv":180},{"mpg":10.4,"cyl":8,"disp":472,"hp":205,"drat":2.93,"wt":5.25,"qsec":17.98,"vs":0,"am":0,"gear":3,"carb":4,"x":5.25,"y":10.4,"z":2.93,"color":"#A9C54C","colorv":205},{"mpg":10.4,"cyl":8,"disp":460,"hp":215,"drat":3,"wt":5.424,"qsec":17.82,"vs":0,"am":0,"gear":3,"carb":4,"x":5.424,"y":10.4,"z":3,"color":"#BECE42","colorv":215},{"mpg":14.7,"cyl":8,"disp":440,"hp":230,"drat":3.23,"wt":5.345,"qsec":17.42,"vs":0,"am":0,"gear":3,"carb":4,"x":5.345,"y":14.7,"z":3.23,"color":"#D3D638","colorv":230},{"mpg":32.4,"cyl":4,"disp":78.7,"hp":66,"drat":4.08,"wt":2.2,"qsec":19.47,"vs":1,"am":1,"gear":4,"carb":1,"x":2.2,"y":32.4,"z":4.08,"color":"#3A2964","colorv":66},{"mpg":30.4,"cyl":4,"disp":75.7,"hp":52,"drat":4.93,"wt":1.615,"qsec":18.52,"vs":1,"am":1,"gear":4,"carb":2,"x":1.615,"y":30.4,"z":4.93,"color":"#440154","colorv":52},{"mpg":33.9,"cyl":4,"disp":71.1,"hp":65,"drat":4.22,"wt":1.835,"qsec":19.9,"vs":1,"am":1,"gear":4,"carb":1,"x":1.835,"y":33.9,"z":4.22,"color":"#3D1C5E","colorv":65},{"mpg":21.5,"cyl":4,"disp":120.1,"hp":97,"drat":3.7,"wt":2.465,"qsec":20.01,"vs":1,"am":0,"gear":3,"carb":1,"x":2.465,"y":21.5,"z":3.7,"color":"#305274","colorv":97},{"mpg":15.5,"cyl":8,"disp":318,"hp":150,"drat":2.76,"wt":3.52,"qsec":16.87,"vs":0,"am":0,"gear":3,"carb":2,"x":3.52,"y":15.5,"z":2.76,"color":"#55A473","colorv":150},{"mpg":15.2,"cyl":8,"disp":304,"hp":150,"drat":3.15,"wt":3.435,"qsec":17.3,"vs":0,"am":0,"gear":3,"carb":2,"x":3.435,"y":15.2,"z":3.15,"color":"#55A473","colorv":150},{"mpg":13.3,"cyl":8,"disp":350,"hp":245,"drat":3.73,"wt":3.84,"qsec":15.41,"vs":0,"am":0,"gear":3,"carb":4,"x":3.84,"y":13.3,"z":3.73,"color":"#E8DE2E","colorv":245},{"mpg":19.2,"cyl":8,"disp":400,"hp":175,"drat":3.08,"wt":3.845,"qsec":17.05,"vs":0,"am":0,"gear":3,"carb":2,"x":3.845,"y":19.2,"z":3.08,"color":"#7FB55F","colorv":175},{"mpg":27.3,"cyl":4,"disp":79,"hp":66,"drat":4.08,"wt":1.935,"qsec":18.9,"vs":1,"am":1,"gear":4,"carb":1,"x":1.935,"y":27.3,"z":4.08,"color":"#3A2964","colorv":66},{"mpg":26,"cyl":4,"disp":120.3,"hp":91,"drat":4.43,"wt":2.14,"qsec":16.7,"vs":0,"am":1,"gear":5,"carb":2,"x":2.14,"y":26,"z":4.43,"color":"#363769","colorv":91},{"mpg":30.4,"cyl":4,"disp":95.1,"hp":113,"drat":3.77,"wt":1.513,"qsec":16.9,"vs":1,"am":1,"gear":5,"carb":2,"x":1.513,"y":30.4,"z":3.77,"color":"#228989","colorv":113},{"mpg":15.8,"cyl":8,"disp":351,"hp":264,"drat":4.22,"wt":3.17,"qsec":14.5,"vs":0,"am":1,"gear":5,"carb":4,"x":3.17,"y":15.8,"z":4.22,"color":"#FDE725","colorv":264},{"mpg":19.7,"cyl":6,"disp":145,"hp":175,"drat":3.62,"wt":2.77,"qsec":15.5,"vs":0,"am":1,"gear":5,"carb":6,"x":2.77,"y":19.7,"z":3.62,"color":"#7FB55F","colorv":175},{"mpg":15,"cyl":8,"disp":301,"hp":335,"drat":3.54,"wt":3.57,"qsec":14.6,"vs":0,"am":1,"gear":5,"carb":8,"x":3.57,"y":15,"z":3.54,"color":"#FDE725","colorv":335},{"mpg":21.4,"cyl":4,"disp":121,"hp":109,"drat":4.11,"wt":2.78,"qsec":18.6,"vs":1,"am":1,"gear":4,"carb":2,"x":2.78,"y":21.4,"z":4.11,"color":"#2C6079","colorv":109}],"type":"bubble"}],"xAxis":{"type":"linear","title":{"text":"wt"},"categories":null}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+<hr />
+<ol start="6" style="list-style-type: decimal">
+<li><a href="https://datastorm-open.github.io/visNetwork/">visNetwork</a>, an interface to the network visualization capabilities of the vis.js library.</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># Here is a basic example of visNetwork:</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">library</span>(visNetwork)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">nodes &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">title =</span> <span class="kw">paste</span>(<span class="st">&quot;node&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), </a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">                    <span class="dt">shape =</span> <span class="kw">c</span>(<span class="st">&quot;dot&quot;</span>, <span class="st">&quot;square&quot;</span>),</a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">                    <span class="dt">size =</span> <span class="dv">10</span><span class="op">:</span><span class="dv">15</span>, <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))</a>
+<a class="sourceLine" id="cb19-6" data-line-number="6">edges &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">from =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">to =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb19-7" data-line-number="7"><span class="kw">visNetwork</span>(nodes, edges) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="st">  </span><span class="kw">visOptions</span>(<span class="dt">highlightNearest =</span> <span class="ot">TRUE</span>, <span class="dt">nodesIdSelection =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div id="htmlwidget-4a36fbafe112f11c1869" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a36fbafe112f11c1869">{"x":{"nodes":{"id":[1,2,3,4,5,6],"title":["node 1","node 2","node 3","node 4","node 5","node 6"],"shape":["dot","square","dot","square","dot","square"],"size":[10,11,12,13,14,15],"color":["blue","red","blue","red","blue","red"],"label":["1","2","3","4","5","6"]},"edges":{"from":[1,2,3,4,5],"to":[5,4,6,3,3]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<hr />
+<p>Above are just some of the htmlwidgets, there are over 30 packages on CRAN which provide htmlwidgets. You can find example uses of several of the more popular htmlwidgets in the htmlwidgets <a href="http://www.htmlwidgets.org/showcase_leaflet.html">showcase</a> and browse all available widgets in the <a href="http://gallery.htmlwidgets.org">gallery</a>.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="components.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-graphics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
